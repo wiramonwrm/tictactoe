@@ -29,10 +29,10 @@ def profiler(boards):
             model.board = create_random_board(i)
             random_time += timeit.timeit(lambda: model.randomComputer(), number=loop)/loop
             ai_time += timeit.timeit(lambda: model.bestMove(), number=loopai)/loopai
-            print(f"random : {random_time}")
-            print(f"AI : {ai_time}")
-        result_random.append(round(random_time/boards, 7))
-        result_ai.append(round(ai_time/boards, 7))
+            # print(f"random : {random_time}")
+            # print(f"AI : {ai_time}")
+        result_random.append(round(random_time/boards*1000, 7))
+        result_ai.append(round(ai_time/boards*1000, 7))
     print(f"random : {result_random}")
     print(f"AI : {result_ai}")
 
